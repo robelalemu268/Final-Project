@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuji Camera Buying Guide</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="images/LogoImage.jpg" alt="logo" class="logo"/>
+            </a>
+            <nav class="top-nav">
+                <a href="buying-guide.html">Buying</a>
+                <a href="Learning-fuji.html">Learning</a>
+                <a href="fuji-photos.html">Photos</a>
+                <a href="contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="big-photo">
+        <img src="images/buypage big photo.jpg" alt="Big Photo" />
+    </div>
+    <div id="cameraPopup" class="popup hidden">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <h2 id="popupTitle"></h2>
+            <img id="popupImage" src="images/default-camera.jpg" alt="Camera Image">
+            <p id="popupDescription"></p>
+        </div>
+    </div>
+        
+        <div class="description">
+            I tried to ease the camera selection criteria based on few fundamentals – Photography Needs, Lens Compatibility needs and last but not least, Budget. I tried to focus on hobbyists, not professional photographers and its my hope that it will ease your journey to Fuji! (Not to be confused with Fiji-)
+        </div>
+
+        <div class="main-options-container">
+            <div class="main-options">
+                <div class="main-option" data-option="photography">
+                    <h3>Photography Needs</h3>
+                    <p class="option-description">
+                        Understanding your photography needs is crucial when selecting a Fujifilm camera. Are you capturing everyday moments, travel adventures, or professional studio work? Each style demands specific features such as portability, high resolution, or advanced lighting controls. Explore models designed for general use, travel, or studio photography to suit your requirements.
+                    </p>
+                </div>
+        
+                <div class="main-option" data-option="lenses">
+                    <h3>Lens Compatibility</h3>
+                    <p class="option-description">
+                        Fujifilm cameras are known for their versatile lens systems, supporting a wide range of photography styles. Whether you need a wide-angle lens for landscapes, a macro lens for close-ups, or a telephoto lens for wildlife, ensure the compatibility with your camera body. Explore options for lens type and their unique functionalities.
+                    </p>
+                </div>
+        
+                <div class="main-option" data-option="budget">
+                    <h3>Budget</h3>
+                    <p class="option-description">
+                        Balancing quality and cost is vital when selecting your camera. Fujifilm offers models across all price ranges, from entry-level cameras with essential features to high-end models for professionals. Whether your budget is under $1,000 or exceeds $4,000, discover options that deliver value without compromising on performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="categories" id="photography-categories">
+            <div class="category" data-category="general">General Photography</div>
+            <div class="category" data-category="travel">Travel or Street Photography</div>
+            <div class="category" data-category="studio">Studio / Inside Photography</div>
+        </div>
+        
+        <div class="categories" id="lenses-categories">
+            <div class="category" data-category="lens-a">Lens Compatability</div>
+            <div class="category" data-category="lens-b">Size/Weight</div>
+            <div class="category" data-category="lens-c">Budget</div>
+        </div>
+        
+        <div class="categories" id="budget-categories">
+            <div class="category" data-category="budget-low">$0 - $1000</div>
+            <div class="category" data-category="budget-mid">$1001 - $4000</div>
+            <div class="category" data-category="budget-high">$4001+</div>
+        </div>
+        
+    <main>
+        <div class="recommendations" id="recommendations">
+            <h3>See Recommended Cameras Below:</h3>
+            <div class="camera-list" id="camera-list"></div>
+        </div>
+    </main>
+
+    <script>
+        const mainOptions = document.querySelectorAll('.main-option');
+        const categories = document.querySelectorAll('.category');
+        const recommendations = document.getElementById('recommendations');
+        const cameraList = document.getElementById('camera-list');
+
+        const cameraData = {
+            general: [
+                { name: "Fujifilm X-T4", img: "images/camera/1.png" },
+                { name: "Fujifilm X-S10", img: "images/camera/2.png" },
+                { name: "Fujifilm X-A7", img: "images/camera/3.png" }
+            ],
+            travel: [
+                { name: "Fujifilm X-E4", img: "images/camera/4.png" },
+                { name: "Fujifilm X-Pro3", img: "images/camera/5.png" },
+                { name: "Fujifilm X70", img: "images/camera/6.png" }
+            ],
+            studio: [
+                { name: "Fujifilm GFX 50R", img: "images/camera/7.png" },
+                { name: "Fujifilm GFX 100S", img: "images/camera/8.png" },
+                { name: "Fujifilm X-T3", img: "images/camera/9.png" }
+            ],
+            "lens-a": [
+                { name: "Fujifilm X-T4", img: "images/camera/10.png" },
+                { name: "Fujifilm X-S10", img: "images/camera/11.png" },
+                { name: "Fujifilm GFX 50R", img: "images/camera/12.png" }
+            ],
+            "lens-b": [
+                { name: "Fujifilm X-E4", img: "images/camera/13.png" },
+                { name: "Fujifilm X100V", img: "images/camera/14.png" },
+                { name: "Fujifilm X-T30 II", img: "images/camera/15.png" }
+            ],
+            "lens-c": [
+                { name: "Fujifilm X-A7", img: "images/camera/16.png" },
+                { name: "Fujifilm X-T200", img: "images/camera/17.png" },
+                { name: "Fujifilm X-T30", img: "images/camera/18.png" }
+            ],
+            "budget-low": [
+                { name: "Fujifilm X-M5", img: "images/camera/12.png" },
+                { name: "Fujifilm X-T30 II", img: "images/camera/14.png" },
+                { name: "Fujifilm X-S10", img: "images/camera/16.png" }
+            ],
+            "budget-mid": [
+                { name: "Fujifilm X-T4", img: "images/camera/18.png" },
+                { name: "Fujifilm X-H2S", img: "images/camera/9.png" },
+                { name: "Fujifilm GFX 50S II", img: "images/camera/7.png" }
+            ],
+            "budget-high": [
+                { name: "Fujifilm GFX 100S", img: "images/camera/3.png" },
+                { name: "Fujifilm GFX 100", img: "images/camera/8.png" },
+                { name: "Fujifilm GFX 100S II", img: "images/camera/2.png" }
+            ]
+        };
+
+        mainOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelectorAll('.categories').forEach(section => section.style.display = 'none');
+                document.getElementById(`${option.getAttribute('data-option')}-categories`).style.display = 'flex';
+                recommendations.style.display = 'none';
+            });
+        });
+
+        categories.forEach(category => {
+            category.addEventListener('click', () => {
+                const selectedCategory = category.getAttribute('data-category');
+                const cameras = cameraData[selectedCategory];
+
+                cameraList.innerHTML = cameras.map(camera => `
+                    <div class="camera-item">
+                        <img src="${camera.img}" alt="${camera.name}">
+                        <p>${camera.name}</p>
+                    </div>
+                `).join('');
+
+                recommendations.style.display = 'block';
+            });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Robel Web Dev Assignment Copyright</p>
+    </footer>
+    </body>
+</html>

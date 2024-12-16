@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Robel Alemu</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="images/LogoImage.jpg" alt="logo" class="logo"/>
+            </a>
+            <nav class="top-nav">
+                <a href="buying-guide.html">Buying</a>
+                <a href="Learning-fuji.html">Learning</a>
+                <a href="fuji-photos.html">Photos</a>
+                <a href="contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <title>Form Validation with PristineJS</title>
+    <title>Form Validation with PristineJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/pristinejs/dist/pristine.min.js"></script>
+    <link rel="stylesheet" href="styles/site.css">
+        <form id="myForm">
+            <h1>Submit Your Info</h1>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" required></textarea>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    
+        <script>
+            // Select the form element
+            const form = document.getElementById('myForm');
+    
+            // Initialize PristineJS
+            const pristine = new Pristine(form, {
+                classTo: 'form-group',
+                errorClass: 'has-error',
+                successClass: 'has-success',
+                errorTextParent: 'form-group', 
+                errorTextTag: 'span',
+                errorTextClass: 'error'
+            });
+    
+            pristine.addValidator(
+                document.getElementById('comments'),
+                function (value) {
+                    return value.trim().length >= 10;
+                },
+                'Comments must be at least 10 characters long!'
+            );
+    
+            // Listen for the "submit" event on the form
+            form.addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent the default form submission
+    
+                // Validate the form
+                const isValid = pristine.validate();
+    
+                if (isValid) {
+                    alert('Form submitted successfully!');
+                    // Here, you can proceed with form submission logic (e.g., AJAX call)
+                } else {
+                    alert('Form validation failed. Please correct the errors.');
+                }
+            });
+        </script>
+    </body>
+    </html>
