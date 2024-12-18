@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All about FujiCamera for the Hobbyist</title>
     <link rel="stylesheet" href="styles/style.css">
+
 </head>
 <body>
     <header>
@@ -44,5 +45,17 @@
 <footer>
     <p>&copy; 2024 Robel Web Dev Assignment Copyright</p>
 </footer>
+    <script src="scripts/js-script.js" />
+    <script>
+const menuToggle = document.querySelector('.menu-toggle');
+    const topNav = document.querySelector('.top-nav');
+
+        menuToggle.addEventListener('click', () => {
+            topNav.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        );
+    });
+});
+</script>
 </body>
 </html>

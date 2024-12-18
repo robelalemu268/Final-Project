@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mainOptions.forEach(option => {
         option.addEventListener('click', () => {
             document.querySelectorAll('.categories').forEach(section => section.style.display = 'none');
-            const targetId = `${option.getAttribute('data-option')}-categories`;
+            const targetId = ${option.getAttribute('data-option')}-categories;
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
                 targetElement.style.display = 'flex';
@@ -101,3 +101,25 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.classList.toggle('open');
         });
     }
+    document.addEventListener('DOMContentLoaded', () => {
+        const contactForm = document.getElementById('myForm');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+        const pristine = new Pristine(contactForm, {
+            classTo: 'form-group',
+            errorClass: 'has-error',
+            successClass: 'has-success',
+            errorTextParent: 'form-group',
+            errorTextTag: 'span',
+            errorTextClass: 'error'
+        });
+    
+        contactForm.addEventListener('submit', event => {
+            event.preventDefault();
+            const isValid = pristine.validate();
+            if (isValid) {
+                contactForm.style.display = 'none';
+                thankYouMessage.style.display = 'block';
+            }
+        });
+    });
+});

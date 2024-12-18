@@ -60,13 +60,6 @@ nav.top-nav a:hover {
     color: #333;
 }
 
-.menu-toggle::before {
-    content: "\2630"; /* ☰ icon */
-}
-
-.menu-toggle.open::before {
-    content: "X"; /* X icon */
-}
 .hamburger {
     display: inline-block;
     cursor: pointer;
@@ -433,10 +426,6 @@ footer {
         font-size: 2rem;
         cursor: pointer;
         color: #333;
-    }
-
-    .menu-toggle::before {
-        content: "\2630"; /* ☰ icon */
     }
 
     .menu-toggle.open::before {

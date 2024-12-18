@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Contact Robel Alemu</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="js-script" href="js-script.js" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -78,6 +79,9 @@
     
                 if (isValid) {
                     alert('Form submitted successfully!');
+                    document.querySelector('#thankYouMessage').style.display = 'block'
+                    document.querySelector('#myForm').style.display = 'none'
+                
                     // Here, you can proceed with form submission logic (e.g., AJAX call)
                 } else {
                     alert('Form validation failed. Please correct the errors.');
