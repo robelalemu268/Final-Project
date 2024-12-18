@@ -498,10 +498,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #16a085;
-}
-
 .error {
     color: #e74c3c;
     font-size: 0.9em;

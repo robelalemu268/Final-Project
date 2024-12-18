@@ -12,10 +12,7 @@
             <a href="index.html">
                 <img src="images/LogoImage.jpg" alt="Logo" class="logo" />
             </a>
-        
             <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
-        
-            <!-- Navigation Links -->
             <nav class="top-nav">
                 <a href="buying-guide.html">Buying</a>
                 <a href="Learning-fuji.html">Learning</a>
@@ -23,8 +20,7 @@
                 <a href="contact-us.html">Contact</a>
             </nav>
         </div>
-    </header>
-    
+    </header>        
     <main>
         <!-- Big Photo Section -->
         <div class="big-photo">
@@ -48,28 +44,5 @@
 <footer>
     <p>&copy; 2024 Robel Web Dev Assignment Copyright</p>
 </footer>
-</body>
-</html>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const topNav = document.querySelector('.top-nav');
-            const breadcrumb = document.querySelector('.breadcrumb');
-
-            // Handle breadcrumb visibility
-            const updateBreadcrumbVisibility = () => {
-                breadcrumb.style.display = window.innerWidth <= 768 ? 'block' : 'none';
-            };
-
-            // Handle Menu Toggle
-            if (menuToggle && topNav) {
-                menuToggle.addEventListener('click', () => {
-                    topNav.classList.toggle('active');
-                    menuToggle.classList.toggle('open');
-                });
-            }
-        });
-    </script>
 </body>
 </html>
