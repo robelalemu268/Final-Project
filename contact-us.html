@@ -11,8 +11,10 @@
     <header>
         <div class="header-container">
             <a href="index.html">
-                <img src="images/LogoImage.jpg" alt="logo" class="logo"/>
+                <img src="images/LogoImage.jpg" alt="Logo" class="logo" />
             </a>
+            <!-- Hamburger/X Button -->
+            <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
             <nav class="top-nav">
                 <a href="buying-guide.html">Buying</a>
                 <a href="Learning-fuji.html">Learning</a>
@@ -20,8 +22,8 @@
                 <a href="contact-us.html">Contact</a>
             </nav>
         </div>
+    </header>        
 
-    </header>
     <div id="thankYouMessage" style="display: none; text-align: center; margin-top: 20px;">
         <p>Thank you for submitting your request, I will reply very soon!</p>
     </div>
@@ -89,4 +91,19 @@
             });
         </script>
     </body>
+        <!-- External Script -->
+        <script src="scripts/js-script.js"></script>
+
+        <!-- Inline JavaScript -->
+        <script>
+            const menuToggle = document.querySelector('.menu-toggle');
+            const topNav = document.querySelector('.top-nav');
+    
+            menuToggle.addEventListener('click', () => {
+                topNav.classList.toggle('active');
+                const isOpen = menuToggle.classList.toggle('open');
+                menuToggle.innerHTML = isOpen ? '&#10006;' : '&#9776;'; // Toggle between "X" and Hamburger icons
+            });
+        </script>
+    
     </html>
