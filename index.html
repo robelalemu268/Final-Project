@@ -5,52 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All about FujiCamera for the Hobbyist</title>
     <link rel="stylesheet" href="styles/style.css">
-    </head>
-    <body>
-<header>
-    <div class="header-container">
-        <a href="index.html">
-            <img src="images/LogoImage.jpg" alt="Logo" class="logo" />
-        </a>
-
-        <!-- Menu Toggle Button for Mobile View -->
-        <button class="menu-toggle" aria-label="Toggle Navigation"></button>
-
-        <nav class="top-nav">
-            <a href="buying-guide.html">Buying</a>
-            <a href="Learning-fuji.html">Learning</a>
-            <a href="fuji-photos.html">Photos</a>
-            <a href="contact-us.html">Contact</a>
-        </nav>
-    </div>
-</header>
-
-<!-- Breadcrumb Section -->
-<div class="breadcrumb">
-    <a href="index.html"></a>
-</div>
-                
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="images/LogoImage.jpg" alt="Logo" class="logo" />
+            </a>
+        
+            <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+        
+            <!-- Navigation Links -->
+            <nav class="top-nav">
+                <a href="buying-guide.html">Buying</a>
+                <a href="Learning-fuji.html">Learning</a>
+                <a href="fuji-photos.html">Photos</a>
+                <a href="contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
     <main>
+        <!-- Big Photo Section -->
         <div class="big-photo">
             <img src="images/Fuji buying page landing.jpg" alt="Big Photo" />
         </div>
 
         <!-- Website Description Section -->
         <section class="website-description">
-            <p>Taking Photographs with FujiCamera is certainly fun but can be complicated. In this class project, I will try to test what we have done in our Web Development class! A Bonus, will do my best to ease your Fuji transisition-)</p>
+            <p>Taking Photographs with FujiCamera is certainly fun but can be complicated. In this class project, I will try to test what we have done in our Web Development class! A Bonus, will do my best to ease your Fuji transition-)</p>
         </section>
 
-        <!-- Navigation Boxes -->
-        <div class="navigation-boxes">
-            <a href="buying-guide.html" class="nav-box">Buying Guide</a>
-            <a href="Learning-fuji.html" class="nav-box">Learning Fuji</a>
-            <a href="fuji-photos.html" class="nav-box">My Fuji Photos</a>
-            <a href="contact-us.html" class="nav-box">Contact Me</a>
-        </div>
-    </main>
+        
+       <!-- Navigation Boxes -->
+       <div class="navigation-boxes">
+        <a href="buying-guide.html" class="nav-box">Buying Guide</a>
+        <a href="Learning-fuji.html" class="nav-box">Learning Fuji</a>
+        <a href="fuji-photos.html" class="nav-box">My Fuji Photos</a>
+        <a href="contact-us.html" class="nav-box">Contact Me</a>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Robel Web Dev Assignment Copyright</p>
+</footer>
+</body>
+</html>
 
-    <footer>
-        <p>&copy; 2024 Robel Web Dev Assignment Copyright</p>
-    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const topNav = document.querySelector('.top-nav');
+            const breadcrumb = document.querySelector('.breadcrumb');
+
+            // Handle breadcrumb visibility
+            const updateBreadcrumbVisibility = () => {
+                breadcrumb.style.display = window.innerWidth <= 768 ? 'block' : 'none';
+            };
+
+            // Handle Menu Toggle
+            if (menuToggle && topNav) {
+                menuToggle.addEventListener('click', () => {
+                    topNav.classList.toggle('active');
+                    menuToggle.classList.toggle('open');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
